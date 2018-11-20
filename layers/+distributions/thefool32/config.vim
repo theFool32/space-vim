@@ -2,6 +2,9 @@ set cc=80
 
 set shell=zsh
 
+" let mapleader=' '
+" let maplocalleader=','
+
 inoremap jk <ESC>
 
 vmap <leader>y "+y

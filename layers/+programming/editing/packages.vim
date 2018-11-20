@@ -1,2 +1,2 @@
-MP 'scrooloose/nerdcommenter',        { 'on': '<Plug>NERDCommenterToggle' }
+MP 'scrooloose/nerdcommenter'
 MP 'jiangmiao/auto-pairs'

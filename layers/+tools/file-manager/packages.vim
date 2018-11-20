@@ -1,7 +1,6 @@
-MP 'danro/rename.vim',               { 'on' : 'Rename' }
-
 " Refer to https://github.com/junegunn/dotfiles  vimrc
 MP 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
+MP 'philip-karlsson/bolt.nvim'
 autocmd! User nerdtree call spacevim#autocmd#nerdtree#Init()
 augroup loadNerdtree
   autocmd!

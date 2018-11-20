@@ -23,8 +23,8 @@ endfunction
 
 " 400
 function! spacevim#defer#programming(timer) abort
-  call s:lod('rainbow', 'vim-rooter', 'vim-polyglot', 'editorconfig-vim')
-  EditorConfigReload
+  call s:lod('rainbow', 'vim-rooter', 'vim-polyglot')
+  " EditorConfigReload
 endfunction
 
 " 500

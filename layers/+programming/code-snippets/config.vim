@@ -1,23 +1,22 @@
 scriptencoding utf-8
 
 " ultisnips {
-  " Set ultisnips triggers
-  let g:UltiSnipsSnippetDirectories=['UltiSnips']
-  exe 'set rtp+=' . expand(g:spacevim.base . '/private/UltiSnips')
-  let g:UltiSnipsSnippetsDir = '~/.vim/UltiSnips'
+let g:UltiSnipsExpandTrigger       = "<Plug>(ultisnips_expand_or_jump)"
+let g:UltiSnipsJumpForwardTrigger  = "<Plug>(ultisnips_expand_or_jump)"
+let g:UltiSnipsJumpBackwardTrigger = "<S-Tab>"
 
-  " c-j c-k for moving in snippet
-  let g:UltiSnipsJumpForwardTrigger = "<c-j>"
-  let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
 
-  if has_key(g:plugs, 'ncm2-ultisnips')
-    " <CR> is used to expand snippets
-    inoremap <silent> <expr> <CR> ((pumvisible() && empty(v:completed_item)) ?  "\<c-y>\<cr>" : (!empty(v:completed_item) ? ncm2_ultisnips#expand_or("", 'n') : "\<CR>" ))
-    imap <expr> <c-u> ncm2_ultisnips#expand_or("\<Plug>(ultisnips_expand)", 'm')
-    smap <c-u> <Plug>(ultisnips_expand)
-    let g:UltiSnipsExpandTrigger = "<Plug>(ultisnips_expand)"
-    let g:UltiSnipsRemoveSelectModeMappings = 0
-  else
-    let g:UltiSnipsExpandTrigger = '<C-e>'
-  endif
+if has_key(g:plugs, 'ncm2-ultisnips')
+    function! UltiSnipsExpandOrJumpOrTab()
+        call UltiSnips#ExpandSnippetOrJump()
+        if g:ulti_expand_or_jump_res > 0
+            return ""
+        else
+            return "\<Tab>"
+        endif
+    endfunction
+    inoremap <silent> <expr> <c-k> ncm2_ultisnips#expand_or("\<Plug>(ultisnips_try_expand)")
+    inoremap <silent> <Plug>(ultisnips_try_expand) <C-R>=UltiSnipsExpandOrJumpOrTab()<CR>
+    snoremap <silent> <c-k> <Esc>:call UltiSnips#ExpandSnippetOrJump()<cr>
+endif
 " }

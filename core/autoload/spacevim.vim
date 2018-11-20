@@ -9,7 +9,7 @@ let g:spacevim.timer = exists('*timer_start')
 let g:spacevim.gui = has('gui_running')
 let g:spacevim.tmux = !empty($TMUX)
 
-let g:spacevim.loaded = ['spacevim'] " Enable spacevim layer by default
+let g:spacevim.loaded = [] " Enable spacevim layer by default
 let g:spacevim.excluded = []
 let g:spacevim.plugins = []
 

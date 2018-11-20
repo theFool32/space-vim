@@ -40,7 +40,7 @@ header.append("%-20s | %s | %s\n" % (':----:', ':----:', ':----'))
 
 output.writelines(header)
 
-url_prefix = 'https://github.com/liuchengxu/space-vim/tree/master/layers'
+url_prefix = 'https://github.com/theFool32/space-vim/tree/master/layers'
 
 plugins = []
 

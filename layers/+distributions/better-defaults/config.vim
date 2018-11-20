@@ -42,3 +42,5 @@ let g:choosewin_overlay_enable = 1
 " }
 
 execute 'source' fnamemodify(expand('<sfile>'), ':h') . '/keybindings.vim'
+let g:startify_custom_indices = ['u', 'i', 'o', 'p', ';', 'n', 'm']
+

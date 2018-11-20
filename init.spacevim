@@ -22,6 +22,7 @@ let g:spacevim_layers = [
       \ 'better-motion',
       \ 'chinese',
       \ 'themes',
+      \ 'git',
       \ ]
 
 " If you want to have more control over the layer, try using Layer command.

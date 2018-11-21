@@ -28,6 +28,8 @@ set incsearch
 set conceallevel=1
 set mouse=a
 set updatetime=100
+set scrolljump=0
+set scrolloff=0
 " set shortmess+=a
 "set cmdheight=2
 "}}}
@@ -120,7 +122,7 @@ augroup end
 
 augroup sync
     au!
-    "autocmd BufWritePost *.py AsyncRun rc 
+    autocmd BufWritePost *.py AsyncRun rc 
 augroup end
 
 

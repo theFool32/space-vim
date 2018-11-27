@@ -1,0 +1,3 @@
+MP 'Shougo/denite.nvim'
+
+

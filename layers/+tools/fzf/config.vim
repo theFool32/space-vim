@@ -32,31 +32,19 @@ nmap <Leader>? <plug>(fzf-maps-n)
 xmap <Leader>? <plug>(fzf-maps-x)
 omap <Leader>? <plug>(fzf-maps-o)
 
-nnoremap <Leader>ag :Ag!<CR>
-vnoremap <Leader>ag :<c-u>call spacevim#plug#fzf#Vsearch()<CR>
+" nnoremap <Leader>ag :Ag!<CR>
+" vnoremap <Leader>ag :<c-u>call spacevim#plug#fzf#Vsearch()<CR>
 
 nnoremap <Leader>bs :Buffers<CR>
-nnoremap <Leader>w? :Windows<CR>
 nnoremap <Leader>ff :Files<CR>
-nnoremap <leader>um :Maps<cr>
+" nnoremap <leader>um :Maps<cr>
 nnoremap <leader>fr :History<cr>
 nnoremap <leader>sj :BTags<cr>
-nnoremap <leader>ft :Filetypes<cr>
 nnoremap <leader>; :Commands<cr>
-nnoremap <leader>/ :BLines<cr>
 
 
 "nnoremap <Leader>ff :Files ~<CR>
-nnoremap <silent> <Leader>sf :call spacevim#plug#fzf#Session()<CR>
+" nnoremap <silent> <Leader>sf :call spacevim#plug#fzf#Session()<CR>
 
-nnoremap <leader>rg :Rg!<cr>
-vnoremap <leader>rg :call spacevim#plug#fzf#RgVisual()<CR>
-
-if !spacevim#load('unite')
-  nnoremap <LocalLeader>v :call spacevim#plug#fzf#Open()<CR>
-  nnoremap <LocalLeader>p :call spacevim#plug#fzf#Rtp()<CR>
-  nnoremap <LocalLeader>fc :call spacevim#plug#fzf#FZFCmd()<CR>
-  nnoremap <LocalLeader>ff :call spacevim#plug#fzf#Func()<CR>
-endif
-
-" }
+" nnoremap <leader>rg :Rg!<cr>
+" vnoremap <leader>rg :call spacevim#plug#fzf#RgVisual()<CR>

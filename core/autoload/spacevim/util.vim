@@ -25,12 +25,6 @@ endfunction
 """""""""""""""""""""""""""""""""""""""""""""""""""
 "    Utilities
 """""""""""""""""""""""""""""""""""""""""""""""""""
-function! spacevim#util#Runtimepath()
-  for path in split(&runtimepath, ',')
-    echo path
-  endfor
-endfunction
-
 " http://vim.wikia.com/wiki/Identify_the_syntax_highlighting_group_used_at_the_cursor
 function! spacevim#util#SyntaxHiGroup()
   echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'

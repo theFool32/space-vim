@@ -2,45 +2,40 @@ scriptencoding utf-8
 
 " Smarter cursorline {
 augroup spacevimCursorline
-  autocmd!
-  autocmd InsertLeave,WinEnter * set cursorline
-  autocmd InsertEnter,WinLeave * set nocursorline
+    autocmd!
+    autocmd InsertLeave,WinEnter * set cursorline
+    autocmd InsertEnter,WinLeave * set nocursorline
 augroup END
 " }
 
 " From tpope
 if g:spacevim.gui
-  command! Bigger  :let &guifont = substitute(&guifont, '\d\+$', '\=submatch(0)+1', '')
-  command! Smaller :let &guifont = substitute(&guifont, '\d\+$', '\=submatch(0)-1', '')
-  noremap + :Bigger<CR>
-  noremap - :Smaller<CR>
+    command! Bigger  :let &guifont = substitute(&guifont, '\d\+$', '\=submatch(0)+1', '')
+    command! Smaller :let &guifont = substitute(&guifont, '\d\+$', '\=submatch(0)-1', '')
+    noremap + :Bigger<CR>
+    noremap - :Smaller<CR>
 endif
 
-" https://github.com/vim/vim/pull/2198
-" incsearch.vim {
-if has('patch-8.0.1238')
-  map n <Plug>(is-nohl)<Plug>(anzu-n-with-echo)
-  map N <Plug>(is-nohl)<Plug>(anzu-N-with-echo)
-else
-  if !g:spacevim.nvim
-    " incsearch.vim has bug with GUI vim
-    if !g:spacevim.gui
-      map /  <Plug>(incsearch-forward)
-      map ?  <Plug>(incsearch-backward)
-      map g/ <Plug>(incsearch-stay)
 
-      map z/ <Plug>(incsearch-fuzzyspell-/)
-      map z? <Plug>(incsearch-fuzzyspell-?)
-      map zg/ <Plug>(incsearch-fuzzyspell-stay)
-    endif
-  endif
-endif
-" }
+map <nop> <Plug>InterestingWords
+nnoremap <silent> <leader>jk :call InterestingWords('n')<cr>
+vnoremap <silent> <leader>jk :call InterestingWords('v')<cr>
+nnoremap <silent> <leader>jK :call UncolorAllWords()<cr>
 
-" vim-choosewin {
-let g:choosewin_overlay_enable = 1
+nnoremap <silent> <leader>jn :call WordNavigation(1)<cr>
+nnoremap <silent> <leader>jN :call WordNavigation(0)<cr>
+
+map n <Plug>(is-nohl)<Plug>(anzu-n-with-echo)
+map N <Plug>(is-nohl)<Plug>(anzu-N-with-echo)
+
+" nmap n <Plug>(anzu-n-with-echo)
+" nmap N <Plug>(anzu-N-with-echo)
+" nmap * <Plug>(anzu-star-with-echo)
+" nmap # <Plug>(anzu-sharp-with-echo)
 " }
 
 execute 'source' fnamemodify(expand('<sfile>'), ':h') . '/keybindings.vim'
 let g:startify_custom_indices = ['u', 'i', 'o', 'p', ';', 'n', 'm']
 
+hi CurrentWord ctermbg=0
+let g:vim_current_word#highlight_current_word = 0

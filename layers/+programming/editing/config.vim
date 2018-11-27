@@ -1,6 +1,7 @@
 scriptencoding utf-8
 
 " nerdcommenter {
+let g:NERDCreateDefaultMappings=0
 let g:NERDSpaceDelims=1
 
 nmap <localleader>/ <Plug>NERDCommenterToggle

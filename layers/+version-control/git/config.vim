@@ -31,4 +31,3 @@ scriptencoding utf-8
   let g:signify_sign_change            = '~'
 " }
 
-  nnoremap <silent> <Leader>tg :call spacevim#plug#toggle#Git()<CR>

@@ -1,4 +1,4 @@
-MP 'unblevable/quick-scope'
+" MP 'unblevable/quick-scope'
 
 if g:spacevim.timer
   MP 'easymotion/vim-easymotion'           , { 'on': [] }

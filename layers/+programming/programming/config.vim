@@ -3,7 +3,7 @@ scriptencoding utf-8
 augroup spacevimNewFile
     autocmd!
     " Add title automatically when new files and move cursor to the end of file
-    autocmd BufNewFile *.py,*.cpp,*.c,*.sh,*.java,*.pl call spacevim#vim#autocmd#AddTitle()
+    autocmd BufNewFile *.py,*.sh call spacevim#vim#autocmd#AddTitle()
 augroup END
 
 " rainbow {
@@ -46,7 +46,7 @@ nnoremap <Leader>tg :TagbarToggle<CR>
 " }
 
 " vim-indent-guides {
-" nnoremap <Leader>ti :IndentGuidesToggle<CR>
+nnoremap <Leader>ti :IndentLinesToggle<CR>
 let g:indentLine_char = '|'
 " }
 
@@ -57,5 +57,5 @@ autocmd BufEnter * set errorformat&
 
 " vim-rooter {
 " To stop vim-rooter echoing the project directory
-let g:rooter_silent_chdir = 1
+" let g:rooter_silent_chdir = 1
 " }

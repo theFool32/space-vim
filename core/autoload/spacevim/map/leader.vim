@@ -100,7 +100,7 @@ endfunction
 
 let g:spacevim#map#leader#desc['t'] = {
       \ 'name' : '+toggle'                          ,
-      \ 'i' : ['IndentGuidesToggle'                 , 'indent-guide']         ,
+      \ 'i' : 'indent-guide'         ,
       \ 'p' : ['setlocal paste!'                    , 'paste-mode']           ,
       \ 'g' : 'tagbar',
       \ 'c' : ['spacevim#vim#toggle#CursorColumn()' , 'cursor-column']        ,

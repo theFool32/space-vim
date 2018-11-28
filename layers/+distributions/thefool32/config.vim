@@ -301,10 +301,6 @@ endif
 let &cpo = s:save_cpo
 unlet s:save_cpo
 
-if has("nvim")
-    let g:python3_host_prog = $HOME . "/.pyenv/shims/python"
-endif
-
 " vim:fdm=marker
 "Fcitx {{{
 function! s:fcitx2en()

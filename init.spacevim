@@ -12,19 +12,20 @@ let g:spacevim_plug_home = '~/.vim/plugged'
 
 " Enable the existing layers in space-vim
 let g:spacevim_layers = [
-      \ 'fzf', 'better-defaults', 'which-key', 'spacevim', 'thefool32',
-      \ 'c-c++',
-      \ 'latex',
-      \ 'ncm2', 'code-snippets', 'editing',
-      \ 'programming',
-      \ 'ctags', 'file-manager',
-      \ 'lsp',
-      \ 'better-motion',
-      \ 'chinese',
-      \ 'themes',
-      \ 'git',
-      \ 'denite',
-      \ ]
+            \ 'fzf', 'better-defaults', 'which-key', 'spacevim', 'thefool32',
+            \ 'c-c++',
+            \ 'latex',
+            \ 'code-snippets', 'editing',
+            \ 'programming',
+            \ 'ctags', 'file-manager',
+            \ 'lsp',
+            \ 'better-motion',
+            \ 'chinese',
+            \ 'themes',
+            \ 'git',
+            \ 'denite',
+            \ 'ncm2',
+            \ ]
 "let g:spacevim_layers = ['better-defaults']
 
 " If you want to have more control over the layer, try using Layer command.
@@ -35,29 +36,33 @@ let g:spacevim_layers = [
 " Manage your own plugins, refer to vim-plug's instruction for more detials.
 function! UserInit()
 
-  " Add plugin via Plug command.
-  " Plug 'junegunn/seoul256.vim'
+    " Add plugin via Plug command.
+    " Plug 'junegunn/seoul256.vim'
 
 endfunction
 
 " Override the default settings as well as adding extras
 function! UserConfig()
-  " If you have installed the powerline fonts and want to enable airline layer
-  " let g:airline_powerline_fonts=1
+    " If you have installed the powerline fonts and want to enable airline layer
+    " let g:airline_powerline_fonts=1
 
-  " Use gui colors in terminal if available
-  function! s:enable_termgui()
-    if has('termguicolors')
-      set termguicolors
-      if g:spacevim.tmux
-        " If use vim inside tmux, see https://github.com/vim/vim/issues/993
-        " set Vim-specific sequences for RGB colors
-        let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-        let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-      endif
+    " Use gui colors in terminal if available
+    function! s:enable_termgui()
+        if has('termguicolors')
+            set termguicolors
+            if g:spacevim.tmux
+                " If use vim inside tmux, see https://github.com/vim/vim/issues/993
+                " set Vim-specific sequences for RGB colors
+                let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+                let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+            endif
+        endif
+    endfunction
+
+
+    if has("nvim")
+        let g:python3_host_prog = $HOME . "/.pyenv/shims/python"
     endif
-  endfunction
-
-  " If your terminal(-emulator) supports true colors, uncomment the line below
-  " call s:enable_termgui()
+    " If your terminal(-emulator) supports true colors, uncomment the line below
+    " call s:enable_termgui()
 endfunction

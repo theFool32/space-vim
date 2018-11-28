@@ -185,24 +185,24 @@ function! spacevim#plug#fzf#Vsearch()
   call s:ag(spacevim#util#VisualSelection())
 endfunction
 
-function! spacevim#plug#fzf#Rg(query, bang)
-  if !executable('rg')
-    return spacevim#util#warn('rg is not found')
-  endif
-  call fzf#vim#grep(
-        \ 'rg --column --line-number --no-heading --color=always --smart-case'.shellescape(a:query), 1,
-        \ a:bang ? fzf#vim#with_preview('up:60%')
-        \        : fzf#vim#with_preview('right:50%:hidden', '?'),
-        \ a:bang
-        \ )
-endfunction
+" function! spacevim#plug#fzf#Rg(query, bang)
+"   if !executable('rg')
+"     return spacevim#util#warn('rg is not found')
+"   endif
+"   call fzf#vim#grep(
+"         \ 'rg --column --line-number --no-heading --color=always --smart-case'.shellescape(a:query), 1,
+"         \ a:bang ? fzf#vim#with_preview('up:60%')
+"         \        : fzf#vim#with_preview('right:50%:hidden', '?'),
+"         \ a:bang
+"         \ )
+" endfunction
 
-function! spacevim#plug#fzf#RgVisual()
-  let l:query = spacevim#util#VisualSelection()
-  call fzf#vim#grep(
-        \ 'rg --column --line-number --no-heading --color=always --smart-case '.l:query, 1,
-        \ )
-endfunction
+" function! spacevim#plug#fzf#RgVisual()
+"   let l:query = spacevim#util#VisualSelection()
+"   call fzf#vim#grep(
+"         \ 'rg --column --line-number --no-heading --color=always --smart-case '.l:query, 1,
+"         \ )
+" endfunction
 
 " Search word under cursor in current buffer
 function! spacevim#plug#fzf#SearchBcword()

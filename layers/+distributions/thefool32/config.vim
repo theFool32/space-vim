@@ -1,39 +1,35 @@
 scriptencoding utf-8
 
-if &compatible || exists('g:loaded_vim_better_default')
-   finish
+if &compatible || exists('g:loaded_vim_thefool32')
+    finish
 endif
-let g:loaded_vim_better_default = 1
+let g:loaded_vim_thefool32 = 1
 
 let s:save_cpo = &cpo
 set cpo&vim
 
 " Neovim has set these as default
-if !has('nvim')
 
-  set nocompatible
+set nocompatible
 
-  syntax on                      " Syntax highlighting
-  filetype plugin indent on      " Automatically detect file types
-  set autoindent                 " Indent at the same level of the previous line
-  set autoread                   " Automatically read a file changed outside of vim
-  set backspace=indent,eol,start " Backspace for dummies
-  set complete-=i                " Exclude files completion
-  set display=lastline           " Show as much as possible of the last line
-  set encoding=utf-8             " Set default encoding
-  set history=10000              " Maximum history record
-  set hlsearch                   " Highlight search terms
-  set incsearch                  " Find as you type search
-  set laststatus=2               " Always show status line
-  set mouse=a                    " Automatically enable mouse usage
-  set smarttab                   " Smart tab
-  " set ttyfast                    " Faster redrawing
-  set viminfo+=!                 " Viminfo include !
-  set wildmenu                   " Show list instead of just completing
+syntax on                      " Syntax highlighting
+filetype plugin indent on      " Automatically detect file types
+set autoindent                 " Indent at the same level of the previous line
+set autoread                   " Automatically read a file changed outside of vim
+set backspace=indent,eol,start " Backspace for dummies
+set complete-=i                " Exclude files completion
+set display=lastline           " Show as much as possible of the last line
+set encoding=utf-8             " Set default encoding
+set history=10000              " Maximum history record
+set hlsearch                   " Highlight search terms
+set incsearch                  " Find as you type search
+set laststatus=2               " Always show status line
+set mouse=a                    " Automatically enable mouse usage
+set smarttab                   " Smart tab
+" set ttyfast                    " Faster redrawing
+set viminfo+=!                 " Viminfo include !
+set wildmenu                   " Show list instead of just completing
 
-  set ttymouse=xterm2
-
-endif
 
 set shortmess=atOI " No help Uganda information, and overwrite read messages to avoid PRESS ENTER prompts
 set ignorecase     " Case insensitive search
@@ -59,6 +55,8 @@ set pumheight=20   " Avoid the pop up menu occupying the whole screen
 set cc=80
 set shell=zsh
 set updatetime=100
+
+set autochdir
 
 set expandtab    " Tabs are spaces, not tabs
 set smartindent
@@ -96,47 +94,20 @@ vmap k gk
 " (useful for handling the permission-denied error)
 command! W w !sudo tee % > /dev/null
 
-" Change cursor shape for iTerm2 on macOS {
-  " bar in Insert mode
-  " inside iTerm2
-  if $TERM_PROGRAM =~# 'iTerm'
-    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-    let &t_SR = "\<Esc>]50;CursorShape=2\x7"
-    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-  endif
 
-  " inside tmux
-  if exists('$TMUX') && $TERM != 'xterm-kitty'
-    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-    let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
-    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-  endif
+" inside neovim
+let $NVIM_TUI_ENABLE_CURSOR_SHAPE=2
 
-  " inside neovim
-  if has('nvim')
-    let $NVIM_TUI_ENABLE_CURSOR_SHAPE=2
-  endif
-" }
-
-if get(g:, 'vim_better_default_minimum', 0)
-  finish
-endif
-
-if get(g:, 'vim_better_default_backup_on', 0)
-  set backup
-else
-  set nobackup
-  set noswapfile
-  set nowritebackup
-endif
-
+set nobackup
+set noswapfile
+set nowritebackup
 if get(g:, 'vim_better_default_enable_folding', 1)
-  set foldenable
-  set foldmarker={,}
-  set foldlevel=0
-  set foldmethod=marker
-  " set foldcolumn=3
-  set foldlevelstart=99
+    set foldenable
+    set foldmarker={,}
+    set foldlevel=0
+    set foldmethod=marker
+    " set foldcolumn=3
+    set foldlevelstart=99
 endif
 
 set background=dark         " Assume dark background
@@ -150,51 +121,51 @@ set fillchars=vert:│,stl:\ ,stlnc:\
 set directory=/tmp//,.
 set backupdir=/tmp//,.
 if v:version >= 703
-  set undodir=/tmp//,.
+    set undodir=/tmp//,.
 endif
 
 highlight clear SignColumn  " SignColumn should match background
 " highlight clear LineNr      " Current line number row will have same background color in relative mode
 
 if has('unnamedplus')
-  set clipboard=unnamedplus,unnamed
+    set clipboard=unnamedplus,unnamed
 else
-  set clipboard+=unnamed
+    set clipboard+=unnamed
 endif
 
 if get(g:, 'vim_better_default_persistent_undo', 0)
-  if has('persistent_undo')
-    set undofile             " Persistent undo
-    set undolevels=1000      " Maximum number of changes that can be undone
-    set undoreload=10000     " Maximum number lines to save for undo on a buffer reload
-  endif
+    if has('persistent_undo')
+        set undofile             " Persistent undo
+        set undolevels=1000      " Maximum number of changes that can be undone
+        set undoreload=10000     " Maximum number lines to save for undo on a buffer reload
+    endif
 endif
 
 set guifont=Source\ Code\ Pro\ 10
 if has('gui_running')
-  set guioptions-=r        " Hide the right scrollbar
-  set guioptions-=L        " Hide the left scrollbar
-  set guioptions-=T
-  set guioptions-=e
-  set shortmess+=c
-  " No annoying sound on errors
-  set noerrorbells
-  set novisualbell
-  set visualbell t_vb=
+    set guioptions-=r        " Hide the right scrollbar
+    set guioptions-=L        " Hide the left scrollbar
+    set guioptions-=T
+    set guioptions-=e
+    set shortmess+=c
+    " No annoying sound on errors
+    set noerrorbells
+    set novisualbell
+    set visualbell t_vb=
 endif
 
 " Key (re)Mappings {
 
-  if get(g:, 'vim_better_default_key_mapping', 1)
+if get(g:, 'vim_better_default_key_mapping', 1)
 
     " Basic {
-      if get(g:, 'vim_better_default_basic_key_mapping', 1)
+    if get(g:, 'vim_better_default_basic_key_mapping', 1)
         " Quit normal mode
         nnoremap <silent> <Leader>q  :q<CR>
         nnoremap <Leader>Q  :qa!<CR>
         " Move half page faster
-        nnoremap <Leader>d  <C-d>
-        nnoremap <Leader>u  <C-u>
+        " nnoremap <Leader>d  <C-d>
+        " nnoremap <Leader>u  <C-u>
         " Insert mode shortcut
         inoremap <C-h> <BS>
         inoremap <C-j> <Down>
@@ -236,38 +207,38 @@ endif
         " nnoremap p p=`]<C-o>
         " Open shell in vim
         if has('nvim') || has('terminal')
-          map <Leader>' :terminal<CR>
+            map <Leader>' :terminal<CR>
         else
-          map <Leader>' :shell<CR>
+            map <Leader>' :shell<CR>
         endif
         " Search result highlight countermand
         nnoremap <Leader>sc :nohlsearch<CR>
         " Toggle pastemode
         nnoremap <Leader>tp :setlocal paste!<CR>
-      endif
+    endif
     " }
 
     " Buffer {
-      if get(g:, 'vim_better_default_buffer_key_mapping', 1)
+    if get(g:, 'vim_better_default_buffer_key_mapping', 1)
         nnoremap <Leader>bp :bprevious<CR>
         nnoremap <Leader>bn :bnext<CR>
         nnoremap <Leader>bf :bfirst<CR>
         nnoremap <Leader>bl :blast<CR>
         nnoremap <Leader>bd :bd<CR>
         nnoremap <Leader>bk :bw<CR>
-      endif
+    endif
     " }
 
     " File {
-      if get(g:, 'vim_better_default_file_key_mapping', 1)
+    if get(g:, 'vim_better_default_file_key_mapping', 1)
         " File save
         nnoremap <Leader>fs :update<CR>
-      endif
+    endif
     " }
 
     " Window {
-      if get(g:, 'vim_better_default_window_key_mapping', 1)
-        nnoremap <Leader>ww <C-W>w
+    if get(g:, 'vim_better_default_window_key_mapping', 1)
+        " nnoremap <Leader>ww <C-W>w
         nnoremap <Leader>wr <C-W>r
         nnoremap <Leader>wd <C-W>c
         nnoremap <Leader>wq <C-W>q
@@ -276,25 +247,25 @@ endif
         nnoremap <Leader>wh <C-W>h
         nnoremap <Leader>wl <C-W>l
         if has('nvim') || has('terminal')
-          tnoremap <Leader>wj <C-W>j
-          tnoremap <Leader>wk <C-W>k
-          tnoremap <Leader>wh <C-W>h
-          tnoremap <Leader>wl <C-W>l
+            tnoremap <Leader>wj <C-W>j
+            tnoremap <Leader>wk <C-W>k
+            tnoremap <Leader>wh <C-W>h
+            tnoremap <Leader>wl <C-W>l
         endif
         nnoremap <Leader>wH <C-W>5<
         nnoremap <Leader>wL <C-W>5>
         nnoremap <Leader>wJ :resize +5<CR>
         nnoremap <Leader>wK :resize -5<CR>
         nnoremap <Leader>w= <C-W>=
-        nnoremap <Leader>ws <C-W>s
+        " nnoremap <Leader>ws <C-W>s
         nnoremap <Leader>w- <C-W>s
         nnoremap <Leader>wv <C-W>v
         nnoremap <Leader>w\| <C-W>v
         nnoremap <Leader>w2 <C-W>v
-      endif
+    endif
     " }
 
-  endif
+endif
 
 " }
 
@@ -304,11 +275,11 @@ unlet s:save_cpo
 " vim:fdm=marker
 "Fcitx {{{
 function! s:fcitx2en()
-  call system("fcitx-remote -s fcitx-keyboard-us")
+    call system("fcitx-remote -s fcitx-keyboard-us")
 endfunction
 augroup fcitx " {
     au!
-autocmd InsertLeave * call s:fcitx2en()
+    autocmd InsertLeave * call s:fcitx2en()
 augroup end " }
 "}}}
 
@@ -326,10 +297,12 @@ augroup HighlightWordUnderCursor
     "autocmd! CursorHold,CursorHoldI * call HighlightWordUnderCursor()
 augroup end
 
-augroup sync
-    au!
-    autocmd BufWritePost *.py AsyncRun rc 
-augroup end
+if get(g:, 'use_rc_sync', 1)
+    augroup sync
+        au!
+        autocmd BufWritePost *.py AsyncRun rc
+    augroup end
+end
 
 
 augroup preview

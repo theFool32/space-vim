@@ -41,7 +41,8 @@ nnoremap <Leader>tg :TagbarToggle<CR>
 " }
 
 " asyncrun.vim {
-" let g:asyncrun_open = float2nr(round(winheight('%') * 0.3))
+" let g:asyncrun_open = float2nr(round(winheight('%') * 0.1))
+" let g:asyncrun_silent = 1
 " nnoremap <F5> :call spacevim#plug#asyncrun#CompileAndRun()<CR>
 " }
 
@@ -52,7 +53,8 @@ let g:indentLine_char = '|'
 
 " vim-polyglot {
 " Reset errorformat to its default value for cooperating with asyncrun.vim
-autocmd BufEnter * set errorformat&
+let g:polyglot_disabled = ['latex']
+" autocmd BufEnter * set errorformat&
 " }
 
 " vim-rooter {

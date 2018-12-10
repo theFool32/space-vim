@@ -24,7 +24,7 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 if has_key(g:plugs, 'vimtex')
 au User Ncm2Plugin call ncm2#register_source({
             \ 'name' : 'vimtex',
-            \ 'priority': 1,
+            \ 'priority': 10,
             \ 'subscope_enable': 1,
             \ 'complete_length': 1,
             \ 'scope': ['tex'],

@@ -83,7 +83,7 @@ let g:spacevim#map#leader#desc['Q'] = [ 'qa!', 'quit-without-saving' ]
 let g:spacevim#map#leader#desc['s'] = {
       \ 'name' : '+search/show'                   ,
       \ 'c' : 'search-clear-highlight'            ,
-      \ 'b' : ['BLines'                           , 'search-in-buffer']       ,
+      \ 'l' : ['BLines'                           , 'search-in-buffer']       ,
       \ 'j' : 'search-tags-in-buffer'       ,
       \ 'g' : ['Ag!', 'search-with-ag'],
       \ }

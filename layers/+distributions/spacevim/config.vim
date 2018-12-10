@@ -2,7 +2,7 @@ scriptencoding utf-8
 
 " Put the :hi command after any :colorscheme command,
 " or the colorscheme can overwrite your highlighting.
-silent! color space-vim-dark
+" silent! color space-vim-dark
 " silent! color onedark
 
 augroup spacevimBasic
@@ -30,10 +30,10 @@ augroup spacevimBasic
   autocmd BufEnter * :syntax sync maxlines=200
 
   " Open quickfix window automatically when something is feeded
-  autocmd QuickFixCmdPost *
-        \ if !len(filter(range(1, winnr('$')), 'getwinvar(v:val, "&ft") == "qf"')) && len(getqflist())
-        \| copen 8
-        \|endif
+  " autocmd QuickFixCmdPost *
+  "       \ if !len(filter(range(1, winnr('$')), 'getwinvar(v:val, "&ft") == "qf"')) && len(getqflist())
+  "       \| copen 8
+  "       \|endif
 
   " Close vim if the last edit buffer is closed, i.e., close NERDTree,
   " undotree, quickfix etc automatically.

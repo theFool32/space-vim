@@ -95,9 +95,6 @@ vmap k gk
 command! W w !sudo tee % > /dev/null
 
 
-" inside neovim
-let $NVIM_TUI_ENABLE_CURSOR_SHAPE=2
-
 set nobackup
 set noswapfile
 set nowritebackup

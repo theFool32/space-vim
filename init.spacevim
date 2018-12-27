@@ -14,7 +14,6 @@ let g:spacevim_plug_home = '~/.vim/plugged'
 let g:spacevim_layers = [
             \ 'fzf', 'better-defaults', 'which-key', 'spacevim', 'thefool32',
             \ 'c-c++',
-            \ 'lsp',
             \ 'latex',
             \ 'code-snippets', 'editing',
             \ 'programming',

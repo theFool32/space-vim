@@ -104,6 +104,7 @@ elseif get(g:, 'spacevim_lsp_prefer_lsnvim', 0)
     let g:LanguageClient_loggingLevel = 'INFO'
     let g:LanguageClient_serverStderr = '/tmp/LanguageServer.log'
     let g:LanguageClient_loadSettings = 1
+    let g:LanguageClient_diagnosticsEnable = 0
     let g:LanguageClient_settingsPath = expand('~/.space-vim/layers/+tools/lsp/settings.json')
 
     let g:LanguageClient_serverCommands = {

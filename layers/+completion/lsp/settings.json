@@ -1,5 +1,24 @@
 {
+    "cpp": {
+        "initializationOptions": {
+            "cacheDirectory": "/tmp/ccls"
+        }
+    },
+    "enabled": true,
     "initializationOptions": {
-      "cacheDirectory": "/tmp/ccls"
+        "displayOptions": {
+            "preferredFormat": "plaintext",
+            "trimDocumentationLines": true,
+            "maxDocumentationLineLength": 0,
+            "trimDocumentationText": true,
+            "maxDocumentationTextLength": 0
+        },
+        "interpreter": {
+            "properties": {
+                "InterpreterPath": "/home/lijie/.pyenv/shims/python3",
+                "UseDefaultDatabase": true,
+                "Version": "3.6.6"
+            }
+        }
     }
 }

@@ -1,0 +1,42 @@
+{
+    // COC preferences
+    "coc.preferences.timeout": 2000,
+    "coc.preferences.diagnostic.enable": false,
+    "coc.preferences.diagnostic.signOffset": 1000,
+    "coc.preferences.diagnostic.errorSign": "✖",
+    "coc.preferences.diagnostic.warningSign": "⚠",
+    "coc.preferences.diagnostic.infoSign": ">>",
+    "coc.preferences.diagnostic.hintSign": ">>",
+    "coc.preferences.triggerAfterInsertEnter": true,
+    "coc.preferences.codeLens.enable": true,
+
+    "coc.source.omni.filetypes": ["tex"],
+
+    "languageserver": {
+        "ccls": {
+            "command": "ccls",
+            "filetypes": ["c", "cpp", "objc", "objcpp"],
+            "rootPatterns": [".ccls", "compile_commands.json", ".vim/", ".git/", ".hg/"],
+            "initializationOptions": {
+                "cacheDirectory": "/tmp/ccls"
+            }
+        },
+        "MPLS":{
+            "command": "dotnet",
+            "args": ["exec", "/home/lijie/dev/python-language-server/output/bin/Release/Microsoft.Python.LanguageServer.dll"],
+            "filetypes": ["python"],
+            "trace.server": "verbose",
+            "initializationOptions": {
+                "interpreter": 
+                {
+                    "properties": 
+                    {
+                        "InterpreterPath": "/home/lijie/.pyenv/shims/python3.6",
+                        "UseDefaultDatabase": true,
+                        "Version": "3.6.6"
+                    }
+                }
+            }
+        },
+    },
+}

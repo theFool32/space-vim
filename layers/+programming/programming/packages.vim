@@ -19,3 +19,5 @@ MP 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
 MP 'Yggdroot/indentLine',             { 'on': 'IndentLinesToggle' }
 
 MP 'skywind3000/asyncrun.vim',        { 'on': ['AsyncRun!', 'AsyncRun'] }
+
+MP 'Shougo/echodoc.vim'

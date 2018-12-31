@@ -31,7 +31,9 @@ set viminfo+=!                 " Viminfo include !
 set wildmenu                   " Show list instead of just completing
 
 
-set shortmess=atOI " No help Uganda information, and overwrite read messages to avoid PRESS ENTER prompts
+set shortmess=atOIc " No help Uganda information, and overwrite read messages to avoid PRESS ENTER prompts
+set noshowcmd
+set noshowmode
 set ignorecase     " Case insensitive search
 set smartcase      " ... but case sensitive when uc present
 set wrap         "  wrap long lines
@@ -45,8 +47,8 @@ set mousehide      " Hide the mouse cursor while typing
 set hidden         " Allow buffer switching without saving
 set t_Co=256       " Use 256 colors
 set ruler          " Show the ruler
-set showcmd        " Show partial commands in status line and Selected characters/lines in visual mode
-set showmode       " Show current mode in command-line
+" set showcmd        " Show partial commands in status line and Selected characters/lines in visual mode
+" set showmode       " Show current mode in command-line
 set showmatch      " Show matching brackets/parentthesis
 set matchtime=5    " Show matching time
 set report=0       " Always report changed lines
@@ -301,11 +303,6 @@ if get(g:, 'use_rc_sync', 1)
     augroup end
 end
 
-
-augroup preview
-    au!
-    autocmd CompleteDone * silent! pclose!
-augroup end
 
 " vmap <leader>y "+y
 " nnoremap <leader>p "+p

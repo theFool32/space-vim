@@ -3,5 +3,5 @@
 " MP 'liuchengxu/vim-better-default'
 
 if !spacevim#load('airline') && !spacevim#load('lightline')
-  MP 'liuchengxu/eleline.vim'
+  MP 'theFool32/eleline.vim'
 endif

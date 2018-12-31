@@ -1,5 +1,5 @@
 " Or map each action separately
-nnoremap <silent> gd :call spacevim#lang#util#Definition()<CR>
+" nnoremap <silent> gd :call spacevim#lang#util#Definition()<CR>
 
 " If hidden not set, TextEdit might fail.
 " Required for operations modifying multiple buffers like rename.
@@ -42,10 +42,10 @@ if get(g:, 'spacevim_lsp_prefer_coc', 0)
     inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
     " Use <c-space> for trigger completion.
-    inoremap <silent><expr> <c-space> coc#refresh()
+    " inoremap <silent><expr> <F8> coc#refresh()
 
     " Use <C-x><C-o> to complete 'word', 'emoji' and 'include' sources
-    imap <silent> <C-x><C-o> <Plug>(coc-complete-custom)
+    " imap <silent> <C-x><C-o> <Plug>(coc-complete-custom)
 
     function! s:check_back_space() abort
         let col = col('.') - 1
@@ -58,6 +58,7 @@ if get(g:, 'spacevim_lsp_prefer_coc', 0)
 
     " Use K for show documentation in preview window
     nnoremap <silent> K :call <SID>show_documentation()<CR>
+    imap <expr> <C-l> pumvisible() ? "\<C-y>" : "\<Plug>(coc-snippets-expand)"
 
     function! s:show_documentation()
         if &filetype == 'vim'
@@ -68,16 +69,28 @@ if get(g:, 'spacevim_lsp_prefer_coc', 0)
     endfunction
 
     " Show signature help while editing
-    autocmd CursorHoldI * silent! call CocAction('showSignatureHelp')
+    " autocmd CursorHoldI * silent! call CocAction('showSignatureHelp')
+    autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+
 
     " Highlight symbol under cursor on CursorHold
     autocmd CursorHold * silent call CocAction('highlight')
 
-    " Remap for format selected region
-    vmap <localleader>=  <Plug>(coc-format-selected)
-    nmap <localleader>=  <Plug>(coc-format-selected)
+    nmap <silent> [c <Plug>(coc-diagnostic-prev)
+    nmap <silent> ]c <Plug>(coc-diagnostic-next)
 
-else
+    nmap <silent> gd <Plug>(coc-definition)
+    nmap <silent> gy <Plug>(coc-type-definition)
+    nmap <silent> gi <Plug>(coc-implementation)
+    nmap <silent> gr <Plug>(coc-references)
+
+    augroup preview
+        au!
+        autocmd CompleteDone * silent! pclose!
+    augroup end
+
+
+elseif get(g:, 'spacevim_lsp_prefer_lsnvim', 0)
 
 
     nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
@@ -97,7 +110,7 @@ else
                 \ 'c': ['ccls', '--log-file=/tmp/cq.log'],
                 \ 'cpp': ['ccls', '--log-file=/tmp/cq.log'],
                 \ 'cuda': ['ccls', '--log-file=/tmp/cq.log'],
-                \ 'python': [$HOME . '/.pyenv/shims/pyls', '--log-file=/tmp/pyls.log'],
+                \ 'python': ['pyls'],
                 \ }
 
     let g:LanguageClient_diagnosticsDisplay =
@@ -128,4 +141,17 @@ else
                 \        },
                 \    }
 
+else
+
+    let g:lsp_log_verbose = 1
+    let g:lsp_log_file = expand('~/vim-lsp.log')
+
+    if executable('pyls')
+        " pip install python-language-server
+        au User lsp_setup call lsp#register_server({
+                    \ 'name': 'pyls',
+                    \ 'cmd': {server_info->['pyls']},
+                    \ 'whitelist': ['python'],
+                    \ })
+    endif
 endif

@@ -7,17 +7,17 @@ let s:plugins = [
             \ 'ncm2/ncm2-bufword',
             \ 'ncm2/ncm2-tmux',
             \ 'ncm2/ncm2-path',
-            \ 'ncm2/ncm2-jedi',
             \ 'theFool32/ncm2-en',
             \ ]
+" \ 'ncm2/ncm2-jedi',
 if g:spacevim.vim8
     call add(s:plugins, 'roxma/vim-hug-neovim-rpc')
 endif
-" if spacevim#load('code-snippets')
-call add(s:plugins, 'ncm2/ncm2-ultisnips')
-" endif
+if spacevim#load('code-snippets')
+    call add(s:plugins, 'ncm2/ncm2-ultisnips')
+endif
 " Enable ncm2 for all buffer
 " autocmd CursorHold,InsertEnter * call ncm2#enable_for_buffer()
-autocmd BufEnter * call ncm2#enable_for_buffer()
+" autocmd BufEnter * call ncm2#enable_for_buffer()
 
 call extend(g:spacevim.plugins, s:plugins)

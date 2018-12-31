@@ -61,3 +61,8 @@ let g:polyglot_disabled = ['latex']
 " To stop vim-rooter echoing the project directory
 " let g:rooter_silent_chdir = 1
 " }
+
+
+" echodoc {
+let g:echodoc#enable_at_startup=1
+" }

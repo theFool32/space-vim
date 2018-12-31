@@ -22,9 +22,16 @@ let g:spacevim_layers = [
             \ 'chinese',
             \ 'themes',
             \ 'denite',
-            \ 'ncm2',
             \ 'org',
+            \ 'syntax-checking',
+            \ 'lsp',
+            \ 'ncm2',
             \ ]
+            " \ 'deoplete',
+
+" let g:spacevim_lsp_prefer_coc=1
+let g:spacevim_lsp_prefer_lsnvim = 1
+let g:use_rc_sync = 0
 
 " If you want to have more control over the layer, try using Layer command.
 " if g:spacevim.gui
@@ -43,8 +50,6 @@ endfunction
 function! UserConfig()
     " If you have installed the powerline fonts and want to enable airline layer
     " let g:airline_powerline_fonts=1
-    " let g:spacevim_lsp_prefer_coc = 1
-    " let g:use_rc_sync = 0
 
     " Use gui colors in terminal if available
     function! s:enable_termgui()

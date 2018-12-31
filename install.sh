@@ -217,4 +217,6 @@ sync_repo
 
 install
 
+ln -sf "$HOME/.space-vim/layers/+completion/lsp/coc-settings.json" "$HOME/.config/nvim/coc-settings.json"
+
 msg "\\nThanks for installing \\033[1;31m$app_name\\033[0m. Enjoy!"

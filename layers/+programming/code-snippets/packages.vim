@@ -2,4 +2,4 @@
 " Load on nothing
 " MP 'SirVer/ultisnips', { 'on': [], 'on_event': 'InsertEnter' }
 MP 'SirVer/ultisnips'
-MP 'honza/vim-snippets'
+MP 'theFool32/vim-snippets'

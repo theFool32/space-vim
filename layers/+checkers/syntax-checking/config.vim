@@ -17,7 +17,7 @@ let g:ale_echo_msg_warning_str = g:spacevim.gui ? 'Warning' : '⚠ Warning'
 " let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
 let g:ale_lint_on_save = 1
-" let g:airline#extensions#ale#enabled = 1
+let g:ale_python_mypy_options = '--disallow-untyped-defs'
 let g:ale_fixers = {
             \   'python': ['autopep8'],
             \   'cpp': ['clang-format'],

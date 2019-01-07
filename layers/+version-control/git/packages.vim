@@ -1,7 +1,7 @@
-MP 'junegunn/gv.vim', { 'on': ['GV', 'GV!'] }
+" MP 'junegunn/gv.vim', { 'on': ['GV', 'GV!'] }
 
 if g:spacevim.timer
-  MP 'tpope/vim-fugitive'     , { 'on': [] }
+  " MP 'tpope/vim-fugitive'     , { 'on': [] }
   MP 'mhinz/vim-signify'      , { 'on': [] }
   call timer_start(300, 'spacevim#defer#git')
   call timer_start(800, 'spacevim#defer#fugitive')

@@ -14,6 +14,7 @@ let g:spacevim_plug_home = '~/.vim/plugged'
 let g:spacevim_layers = [
             \ 'fzf', 'better-defaults', 'which-key', 'spacevim', 'thefool32',
             \ 'c-c++',
+            \ 'python',
             \ 'latex',
             \ 'code-snippets', 'editing',
             \ 'programming',
@@ -27,11 +28,12 @@ let g:spacevim_layers = [
             \ 'lsp',
             \ 'ncm2',
             \ ]
+            " \ 'git',
             " \ 'deoplete',
 
 " let g:spacevim_lsp_prefer_coc=1
 let g:spacevim_lsp_prefer_lsnvim = 1
-let g:use_rc_sync = 0
+let g:use_rc_sync = 1
 
 " If you want to have more control over the layer, try using Layer command.
 " if g:spacevim.gui

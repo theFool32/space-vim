@@ -54,7 +54,7 @@ set matchtime=5    " Show matching time
 set report=0       " Always report changed lines
 set linespace=0    " No extra spaces between rows
 set pumheight=20   " Avoid the pop up menu occupying the whole screen
-set cc=80
+set cc=88
 set shell=zsh
 set updatetime=100
 

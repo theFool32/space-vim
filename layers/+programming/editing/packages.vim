@@ -1,6 +1,7 @@
 MP 'scrooloose/nerdcommenter'
 MP 'jiangmiao/auto-pairs'
 MP 'tpope/vim-surround'
+MP 'michaeljsmith/vim-indent-object'
 
 augroup spacevimAutoPairs
     autocmd!

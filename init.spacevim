@@ -34,7 +34,6 @@ let g:spacevim_layers = [
             \ 'git',
             \ ]
             " \ 'deoplete',
-            "
 
 " let g:spacevim_lsp_prefer_coc=1
 let g:spacevim_lsp_prefer_lsnvim = 1

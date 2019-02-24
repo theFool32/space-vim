@@ -1,11 +1,11 @@
 scriptencoding utf-8
-let g:ncm2#complete_length = 1
+let g:ncm2#complete_length = 2
 let g:ncm2#matcher = {
             \ 'name': 'combine',
             \ 'matchers': ['abbrfuzzy', 'substr']
             \ }
 autocmd BufEnter * call ncm2#enable_for_buffer()
-" call ncm2#override_source('LanguageClient_python', {'enable': 0})
+call ncm2#override_source('LanguageClient_python', {'enable': 0})
 " suppress the annoying 'match x of y', 'The only match' and 'Pattern not
 
 " CTRL-C doesn't trigger the InsertLeave autocmd . map to <ESC> instead.

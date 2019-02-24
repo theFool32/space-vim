@@ -16,6 +16,9 @@
 
 scriptencoding utf-8
 
+let $NVIM_PYTHON_LOG_FILE="/tmp/nvim_log"
+let $NVIM_PYTHON_LOG_LEVEL="ERROR"
+
 let g:spacevim = get(g:, 'spacevim', {})
 let g:spacevim.base = $HOME.'/.space-vim'
 let g:spacevim.version = '0.8.0'

@@ -84,8 +84,8 @@ set wildignore+=*/tmp/*,*.o,*.obj,*.so     " Unix
 set wildignore+=*\\tmp\\*,*.exe            " Windows
 
 " Visual shifting (does not exit Visual mode)
-vnoremap < <gv
-vnoremap > >gv
+"vnoremap < <gv
+"vnoremap > >gv
 " Treat long lines as break lines (useful when moving around in them)
 "nmap j gj
 "nmap k gk
@@ -140,7 +140,7 @@ if get(g:, 'vim_better_default_persistent_undo', 0)
     endif
 endif
 
-set guifont=Source\ Code\ Pro\ 10
+set guifont=Source\ Code\ Pro\ :h11
 if has('gui_running')
     set guioptions-=r        " Hide the right scrollbar
     set guioptions-=L        " Hide the left scrollbar
@@ -314,3 +314,4 @@ noremap <leader><leader>q :q!<cr>
 noremap <leader><leader>b :bd<cr>
 noremap <C-S> :update<CR>
 
+set synmaxcol=200

@@ -1,2 +1,2 @@
-MP 'yianwillis/vimcdoc'
+"MP 'yianwillis/vimcdoc'
 MP 'ianva/vim-youdao-translater'

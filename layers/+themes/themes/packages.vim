@@ -1,1 +1,1 @@
-MP 'joshdick/onedark.vim'
+MP 'jacoborus/tender.vim'

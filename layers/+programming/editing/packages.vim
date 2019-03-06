@@ -1,4 +1,4 @@
-MP 'scrooloose/nerdcommenter'
+MP 'scrooloose/nerdcommenter', {'on': '<Plug>NERDCommenterToggle'}
 MP 'jiangmiao/auto-pairs'
 MP 'tpope/vim-surround'
 MP 'michaeljsmith/vim-indent-object'

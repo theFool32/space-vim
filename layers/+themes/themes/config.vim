@@ -1,3 +1,2 @@
 " set bg=dark
-" colorscheme onedark↵
-silent! color onedark
+silent! color tender

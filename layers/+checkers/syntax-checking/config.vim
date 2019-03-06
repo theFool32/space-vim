@@ -20,8 +20,9 @@ let g:ale_lint_on_save = 1
 let g:ale_python_mypy_options = '--disallow-untyped-defs'
 let g:ale_python_flake8_options = '--max-line-length=88'
 let g:ale_linters = {
-            \   'python': ['flake8', 'mypy'],
+            \   'python': ['flake8'],
             \}
+            "\   'python': ['flake8', 'mypy'],
 let g:ale_fixers = {
             \   'python': ['black'],
             \   'cpp': ['clang-format'],

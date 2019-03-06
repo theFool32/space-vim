@@ -30,7 +30,7 @@ let g:spacevim_layers = [
             \ 'org',
             \ 'syntax-checking',
             \ 'lsp',
-            \ 'ncm2',
+            \ 'deoplete',
             \ 'git',
             \ ]
             " \ 'deoplete',

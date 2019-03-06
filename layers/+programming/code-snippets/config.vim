@@ -1,12 +1,15 @@
 scriptencoding utf-8
 
 " ultisnips {
-let g:UltiSnipsExpandTrigger       = "<Plug>(ultisnips_expand_or_jump)"
-let g:UltiSnipsJumpForwardTrigger  = "<Plug>(ultisnips_expand_or_jump)"
-let g:UltiSnipsJumpBackwardTrigger = "<S-Tab>"
+let g:UltiSnipsExpandTrigger       = "<c-k>"
+let g:UltiSnipsJumpForwardTrigger  = "<c-k>"
+let g:UltiSnipsJumpBackwardTrigger = "<c-j>"
 
 
 if has_key(g:plugs, 'ncm2-ultisnips')
+    let g:UltiSnipsExpandTrigger       = "<Plug>(ultisnips_expand_or_jump)"
+    let g:UltiSnipsJumpForwardTrigger  = "<Plug>(ultisnips_expand_or_jump)"
+    let g:UltiSnipsJumpBackwardTrigger = "<S-Tab>"
     function! UltiSnipsExpandOrJumpOrTab()
         call UltiSnips#ExpandSnippetOrJump()
         if g:ulti_expand_or_jump_res > 0

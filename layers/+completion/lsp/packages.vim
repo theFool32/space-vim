@@ -1,5 +1,6 @@
 if get(g:, 'spacevim_lsp_prefer_coc', 0)
     MP 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+    MP 'kabouzeid/tmux-complete.vim'
     " MP 'neoclide/coc-jedi', {'do': 'yarn install'}
 
     " Don't know why coc.nvim doesn't work until I do the autocmd CocNvimInit explicitly

@@ -29,7 +29,7 @@ if get(g:, 'spacevim_lsp_prefer_coc', 0)
     endfunction
 
     " Better display for messages
-    set cmdheight=2
+    "set cmdheight=2
 
     " Smaller updatetime for CursorHold & CursorHoldI
     set updatetime=300
@@ -88,6 +88,20 @@ if get(g:, 'spacevim_lsp_prefer_coc', 0)
         au!
         autocmd CompleteDone * silent! pclose!
     augroup end
+
+    augroup mygroup
+        autocmd!
+        " Setup formatexpr specified filetype(s).
+        autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+        " Update signature help on jump placeholder
+        autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+    augroup end
+
+    " Use `:Format` for format current buffer
+    command! -nargs=0 Format :call CocAction('format')
+
+    " Use `:Fold` for fold current buffer
+    command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 
 
 elseif get(g:, 'spacevim_lsp_prefer_lsnvim', 0)

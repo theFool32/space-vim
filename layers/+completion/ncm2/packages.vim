@@ -7,10 +7,10 @@ let s:plugins = [
             \ 'wellle/tmux-complete.vim',
             \ 'theFool32/ncm2-en',
             \ 'ncm2/ncm2-jedi',
+            \ 'ncm2/ncm2-bufword',
             \ ]
             "\ 'ncm2/ncm2-path',
             "\ 'HansPinckaers/ncm2-jedi'
-            "\ 'ncm2/ncm2-bufword',
 " \ 'ncm2/ncm2-tmux',
 "if g:spacevim.vim8
 "    call add(s:plugins, 'roxma/vim-hug-neovim-rpc')

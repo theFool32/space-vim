@@ -54,7 +54,7 @@ set matchtime=5    " Show matching time
 set report=0       " Always report changed lines
 set linespace=0    " No extra spaces between rows
 set pumheight=20   " Avoid the pop up menu occupying the whole screen
-set cc=88
+"set cc=88
 set shell=zsh
 set updatetime=100
 
@@ -63,6 +63,7 @@ set autochdir
 set expandtab    " Tabs are spaces, not tabs
 set smartindent
 set completeopt=noinsert,menuone,noselect
+"set completeopt=noinsert,menuone,noselect,preview
 
 " http://stackoverflow.com/questions/6427650/vim-in-tmux-background-color-changes-when-paging/15095377#15095377
 set t_ut=
@@ -87,10 +88,10 @@ set wildignore+=*\\tmp\\*,*.exe            " Windows
 "vnoremap < <gv
 "vnoremap > >gv
 " Treat long lines as break lines (useful when moving around in them)
-"nmap j gj
-"nmap k gk
-"vmap j gj
-"vmap k gk
+nmap j gj
+nmap k gk
+vmap j gj
+vmap k gk
 
 " :W sudo saves the file
 " (useful for handling the permission-denied error)
@@ -273,13 +274,13 @@ unlet s:save_cpo
 
 " vim:fdm=marker
 "Fcitx {{{
-function! s:fcitx2en()
-    call system("fcitx-remote -s fcitx-keyboard-us")
-endfunction
-augroup fcitx " {
-    au!
-    autocmd InsertLeave * call s:fcitx2en()
-augroup end " }
+"function! s:fcitx2en()
+"    call system("fcitx-remote -s fcitx-keyboard-us")
+"endfunction
+"augroup fcitx " {
+"    au!
+"    autocmd InsertLeave * call s:fcitx2en()
+"augroup end " }
 "}}}
 
 
@@ -300,6 +301,9 @@ if get(g:, 'use_rc_sync', 1)
     augroup sync
         au!
         autocmd BufWritePost *.py AsyncRun rc
+        autocmd BufWritePost *.sh AsyncRun rc
+        "autocmd BufWritePost *.py !rc
+        "autocmd BufWritePost *.sh !rc
     augroup end
 end
 
@@ -314,4 +318,4 @@ noremap <leader><leader>q :q!<cr>
 noremap <leader><leader>b :bd<cr>
 noremap <C-S> :update<CR>
 
-set synmaxcol=200
+"set synmaxcol=200

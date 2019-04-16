@@ -5,6 +5,9 @@ let g:vimtex_quickfix_open_on_warning = 0
 let g:vimtex_quickfix_ignore_all_warnings = 0
 let g:vimtex_quickfix_latexlog = {'default' : 0}
 
+set conceallevel=1
+let g:tex_conceal='abdmg'
+
 
 augroup latex
     au!
@@ -23,3 +26,4 @@ augroup latex
     autocmd FileType tex nnoremap <F7> <Plug>(grammarous-open-info-window)
 augroup end
 
+"abbreviate cvpr compute vision and pattern recognize

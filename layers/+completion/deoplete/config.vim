@@ -23,3 +23,5 @@ call deoplete#custom#var('omni', 'input_patterns', {
             \})
 
 
+"let g:float_preview#docked = 1
+"let g:float_preview#max_width = 500

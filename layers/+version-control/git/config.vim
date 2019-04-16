@@ -12,6 +12,8 @@ scriptencoding utf-8
   nnoremap <silent> <Leader>ge :Gedit<CR>
   " Mnemonic _i_nteractive
   nnoremap <silent> <Leader>gi :Git add %<CR>
+
+  nnoremap <silent> <Leader>gg :Gwrite<CR>:Gcommit<CR>
 "}
 
 " vim-gitgutter {

@@ -22,6 +22,7 @@ let g:spacevim_layers = [
             \ 'latex',
             \ 'code-snippets', 'editing',
             \ 'programming',
+            \ 'formatting',
             \ 'ctags', 'file-manager',
             \ 'better-motion',
             \ 'chinese',
@@ -30,13 +31,16 @@ let g:spacevim_layers = [
             \ 'org',
             \ 'syntax-checking',
             \ 'lsp',
-            \ 'deoplete',
             \ 'git',
             \ ]
+            "\ 'ncm2',
             " \ 'deoplete',
+"let g:spacevim_layers = [
+"            \ 'latex',
+"            \ ]
 
-" let g:spacevim_lsp_prefer_coc=1
-let g:spacevim_lsp_prefer_lsnvim = 1
+let g:spacevim_lsp_prefer_coc=1
+"let g:spacevim_lsp_prefer_lsnvim = 1
 let g:use_rc_sync = 1
 
 " If you want to have more control over the layer, try using Layer command.

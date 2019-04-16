@@ -10,7 +10,7 @@
     "coc.preferences.triggerAfterInsertEnter": true,
     "coc.preferences.codeLens.enable": true,
 
-    "coc.source.omni.filetypes": ["tex"],
+    // "coc.source.omni.filetypes": ["tex"],
 
     "languageserver": {
         "ccls": {
@@ -21,22 +21,9 @@
                 "cacheDirectory": "/tmp/ccls"
             }
         },
-        "MPLS":{
-            "command": "dotnet",
-            "args": ["exec", "/home/lijie/dev/python-language-server/output/bin/Release/Microsoft.Python.LanguageServer.dll"],
-            "filetypes": ["python"],
-            "trace.server": "verbose",
-            "initializationOptions": {
-                "interpreter": 
-                {
-                    "properties": 
-                    {
-                        "InterpreterPath": "/home/lijie/.pyenv/shims/python3.6",
-                        "UseDefaultDatabase": true,
-                        "Version": "3.6.6"
-                    }
-                }
-            }
-        },
     },
+    "python.pythonPath": "/home/lijie/.pyenv/shims/python",
+    "python.linting.pylintEnabled": false,
+    "python.linting.enabled": false,
+    "python.jediEnabled": true,
 }

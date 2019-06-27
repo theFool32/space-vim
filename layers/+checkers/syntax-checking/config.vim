@@ -1,7 +1,7 @@
 scriptencoding utf-8
 
 " let g:ale_set_highlights = 0
- let g:ale_fix_on_save = 1
+let g:ale_fix_on_save = 1
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_statusline_format = ['E•%d', 'W•%d', 'OK']
 
@@ -22,7 +22,7 @@ let g:ale_python_flake8_options = '--max-line-length=88'
 let g:ale_linters = {
             \   'python': ['flake8'],
             \}
-            "\   'python': ['flake8', 'mypy'],
+            "\   'python': ['pylint'],
 let g:ale_fixers = {
             \   'python': ['black'],
             \   'cpp': ['clang-format'],

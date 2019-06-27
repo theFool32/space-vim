@@ -15,6 +15,7 @@ endif
 
 " Need to disable airline extension for tagbar, see vim-airline issue 1313.
 MP 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
+"MP 'liuchengxu/vista.vim'
 
 "MP 'Yggdroot/indentLine',             { 'on': 'IndentLinesToggle' }
 MP 'Yggdroot/indentLine'

@@ -215,7 +215,7 @@ check_git
 
 sync_repo
 
-install
+install_for_neovim
 
 ln -sf "$HOME/.space-vim/layers/+completion/lsp/coc-settings.json" "$HOME/.config/nvim/coc-settings.json"
 

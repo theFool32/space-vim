@@ -115,7 +115,7 @@ endfor
 
 unlet s:m s:insert_mode_mappings s:normal_mode_mappings
 
-nnoremap <Leader>bs :Denite buffer<CR>
+"nnoremap <Leader>bs :Denite buffer<CR>
 
 " vim:set et sw=2 cc=80:
 

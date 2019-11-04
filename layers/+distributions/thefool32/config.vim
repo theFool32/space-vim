@@ -185,7 +185,7 @@ if get(g:, 'vim_better_default_key_mapping', 1)
         cnoremap <C-a> <Home>
         cnoremap <C-e> <End>
         cnoremap <C-d> <Delete>
-        " jj | escaping
+        " jk | escaping
         inoremap jk <Esc>
         cnoremap jk <C-c>
         " Quit visual mode

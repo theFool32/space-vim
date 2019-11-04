@@ -22,7 +22,7 @@
             }
         },
     },
-    "python.pythonPath": "/home/lijie/.pyenv/shims/python",
+    "python.pythonPath": "/usr/local/bin/python3",
     "python.linting.pylintEnabled": false,
     "python.linting.enabled": false,
     "python.jediEnabled": true,

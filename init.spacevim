@@ -75,10 +75,13 @@ function! UserConfig()
     endfunction
 
 
+    echo 'hi'
     if has("nvim")
-        let g:python2_host_prog = $HOME . "/.pyenv/shims/python2"
-        let g:python3_host_prog = $HOME . "/.pyenv/shims/python3.7"
+        "let g:python2_host_prog = $HOME . "/.pyenv/shims/python2"
+        "let g:python3_host_prog = $HOME . "/.pyenv/shims/python3.7"
+        let g:python3_host_prog = "/usr/local/bin/python3.7"
     endif
     " If your terminal(-emulator) supports true colors, uncomment the line below
     " call s:enable_termgui()
 endfunction
+

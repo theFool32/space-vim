@@ -27,12 +27,12 @@ let g:spacevim_layers = [
             \ 'better-motion',
             \ 'chinese',
             \ 'themes',
-            \ 'denite',
             \ 'org',
-            \ 'syntax-checking',
             \ 'lsp',
+            \ 'syntax-checking',
             \ 'git',
             \ ]
+            "\ 'denite',
             "\ 'ncm2',
             " \ 'deoplete',
 "let g:spacevim_layers = [
@@ -75,13 +75,15 @@ function! UserConfig()
     endfunction
 
 
-    echo 'hi'
     if has("nvim")
         "let g:python2_host_prog = $HOME . "/.pyenv/shims/python2"
         "let g:python3_host_prog = $HOME . "/.pyenv/shims/python3.7"
         let g:python3_host_prog = "/usr/local/bin/python3.7"
     endif
+    inoremap <expr> <TAB> pumvisible() ? "\<C-n>" : "\<tab>"
+    inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+    autocmd BufNew,BufEnter *.py execute "silent! CocDisable"
+    autocmd BufLeave *.py execute "silent! CocEnable"
     " If your terminal(-emulator) supports true colors, uncomment the line below
     " call s:enable_termgui()
 endfunction
-

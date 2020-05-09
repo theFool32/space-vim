@@ -35,7 +35,7 @@ omap <Leader>? <plug>(fzf-maps-o)
 " nnoremap <Leader>ag :Ag!<CR>
 " vnoremap <Leader>ag :<c-u>call spacevim#plug#fzf#Vsearch()<CR>
 
-nnoremap <Leader>bs :Buffers<CR>
+nnoremap <Leader>bb :Buffers<CR>
 nnoremap <Leader>ff :Files<CR>
 " nnoremap <leader>um :Maps<cr>
 nnoremap <leader>fr :History<cr>

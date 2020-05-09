@@ -161,7 +161,7 @@ if get(g:, 'vim_better_default_key_mapping', 1)
     " Basic {
     if get(g:, 'vim_better_default_basic_key_mapping', 1)
         " Quit normal mode
-        nnoremap <silent> <Leader>q  :q<CR>
+        nnoremap <silent> <Leader>qq  :q<CR>
         nnoremap <Leader>Q  :qa!<CR>
         " Move half page faster
         " nnoremap <Leader>d  <C-d>
